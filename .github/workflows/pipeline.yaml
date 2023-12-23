@@ -13,7 +13,7 @@ jobs:
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@2
+      uses: actions/checkout@v2
       
 
     - name: Run tests
