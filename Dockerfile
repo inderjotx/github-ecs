@@ -8,6 +8,7 @@ FROM base as builder
 WORKDIR /app
 COPY . .
 SHELL ["/bin/ash", "-c"]
+RUN npm install 
 RUN  npm run build
 
 
@@ -15,7 +16,6 @@ FROM base as production
 WORKDIR /app
 
 ENV NODE_ENV=production
-RUN npm ci
 
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001
